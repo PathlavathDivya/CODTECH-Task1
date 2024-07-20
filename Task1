@@ -1,0 +1,58 @@
+/*TASK 1 */
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    if b == 0:
+        return "Error! Division by zero."
+    else:
+        return a / b
+
+def calculator():
+    print("Welcome to the basic calculator!")
+
+    # Input first number
+    num1 = float(input("Enter the first number: "))
+
+    # Input second number
+    num2 = float(input("Enter the second number: "))
+
+    # Input operation
+    print("Choose the operation:")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    operation = input("Enter the number corresponding to the operation (1/2/3/4): ")
+
+    # Perform calculation
+    if operation == '1':
+        result = add(num1, num2)
+        operation_name = "Addition"
+    elif operation == '2':
+        result = subtract(num1, num2)
+        operation_name = "Subtraction"
+    elif operation == '3':
+        result = multiply(num1, num2)
+        operation_name = "Multiplication"
+    elif operation == '4':
+        result = divide(num1, num2)
+        operation_name = "Division"
+    else:
+        result = "Invalid operation selected!"
+        operation_name = ""
+
+    # Display result
+    if operation_name:
+        print(f"The result of the {operation_name} of {num1} and {num2} is: {result}")
+    else:
+        print(result)
+
+# Run the calculator
+calculator()
